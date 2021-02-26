@@ -1,0 +1,1653 @@
+@import url("common.css");
+@font-face {
+  font-family: 'Grot10';
+  src: url(../fonts/Grot10-Light.woff2);
+}
+
+@font-face {
+  font-family: 'DomaineSans';
+  src: url(../fonts/DomaineSansDisplay-Light.woff2);
+}
+
+@font-face {
+  font-family: 'Hijrnotes';
+  src: url(../fonts/Hijrnotes.woff2);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@-webkit-keyframes forheads {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes forheads {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.m_header {
+  z-index: 9;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.m_header .logo {
+  position: fixed;
+  top: 6%;
+  left: 3%;
+  width: 190px;
+  height: 37px;
+  z-index: 9;
+}
+
+.m_header .logo a {
+  background: url(../png/fuoripista_logo_white.png) no-repeat;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.m_header .blogo {
+  position: fixed;
+  top: 6%;
+  left: 3%;
+  width: 190px;
+  height: 37px;
+  z-index: 9;
+}
+
+.m_header .blogo a {
+  background: url(../svg/fuoripista_logo.svg) no-repeat;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.m_header .menu {
+  z-index: 9;
+  font-family: 'Grot10';
+  position: fixed;
+  top: 5%;
+  right: 3%;
+  width: 120px;
+  height: 46px;
+  background: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1em;
+  border-radius: 27px;
+  border: 1px solid #555555;
+  color: white;
+}
+
+.m_header .menu .brgrbtn::before {
+  content: "";
+  display: block;
+  border-bottom: 2px solid #555555;
+  margin-bottom: .3vw;
+}
+
+.m_header .menu .brgrbtn::after {
+  content: '';
+  display: block;
+  border-bottom: 2px solid #555555;
+  margin-bottom: .3vw;
+}
+
+.m_header .menu .brgrbtn {
+  content: '';
+  width: 20px;
+  display: block;
+  border-bottom: 2px solid #555555;
+}
+
+.m_header .mopen {
+  background: black;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+}
+
+.m_header .mopen .menuleft {
+  width: 49%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 1px solid #555555;
+}
+
+.m_header .mopen .menuleft a {
+  font-family: 'DomaineSans';
+  font-size: 20vh;
+  line-height: 1em;
+  color: white;
+}
+
+.m_header .mopen .menuleft a:hover {
+  color: #c39d42;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.m_header .mopen .menuright {
+  width: 49%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 5vw;
+}
+
+.m_header .mopen .menuright .mrtop {
+  font-family: 'DomaineSans';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.m_header .mopen .menuright .mrtop a {
+  color: white;
+  font-size: 8vh;
+}
+
+.m_header .mopen .menuright .mrtop a:hover {
+  color: #c39d42;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.m_header .mopen .menuright .mrbottom {
+  width: 60%;
+  margin-top: 10vh;
+}
+
+.m_header .mopen .menuright .mrbottom a {
+  display: inline-block;
+  width: 49%;
+  font-family: 'Grot10';
+  color: white;
+  margin: 1vh 0;
+}
+
+.m_header .mopen .menuright .mrbottom a:hover {
+  color: #c39d42;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.m_header .mopen .mshare {
+  position: fixed;
+  z-index: 9;
+  left: 3%;
+  bottom: 3%;
+  display: none;
+}
+
+.m_header .mopen .mshare a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.m_header .mopen.act {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+
+.m_header .imgnav {
+  position: fixed;
+  bottom: 3%;
+  left: 3%;
+}
+
+.m_header .infonav {
+  z-index: 9;
+  font-family: 'Grot10';
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 1em;
+}
+
+.intro {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6) url(../imgs/0_cover.jpg) no-repeat;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+.intro .head1 {
+  font-size: 4vw;
+  font-family: 'DomaineSans';
+  line-height: 1em;
+  -webkit-animation: forheads .5s linear;
+          animation: forheads .5s linear;
+}
+
+.intro .head1 span {
+  overflow: hidden;
+  display: block;
+}
+
+.intro .head2 {
+  font-size: 2vw;
+  font-family: 'DomaineSans';
+  line-height: 1.5em;
+  -webkit-animation: forheads .5s linear;
+          animation: forheads .5s linear;
+}
+
+.intro .head2 span {
+  overflow: hidden;
+}
+
+.intro .head2 em {
+  font-family: 'Hijrnotes';
+  padding: 0 1vw 0 0;
+  font-size: 3vw;
+  vertical-align: bottom;
+  color: #c39d42;
+}
+
+.sec1 {
+  width: 100vw;
+  height: 100vh;
+  background: url(../imgs/0_sec1.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+.sec1 .head1 {
+  font-size: 4vw;
+  font-family: 'DomaineSans';
+  line-height: 1em;
+  -webkit-animation: forheads .5s linear;
+          animation: forheads .5s linear;
+  color: white;
+  text-align: center;
+}
+
+.sec1 .head2 {
+  font-size: 2vw;
+  font-family: 'DomaineSans';
+  line-height: 1.5em;
+  -webkit-animation: forheads .5s linear;
+          animation: forheads .5s linear;
+  color: white;
+  text-align: center;
+}
+
+.sec1 .head2 em {
+  font-family: 'Hijrnotes';
+  padding: 0 1vw 0 0;
+  font-size: 3vw;
+  vertical-align: bottom;
+  color: #c39d42;
+}
+
+.sec1 .subtitle {
+  color: white;
+  text-align: center;
+  margin-top: 3vh;
+  font-family: 'Grot10';
+}
+
+.sec1 .sec_1_cont {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vw;
+  -webkit-transform: rotate(-90deg) translateX(-100vh);
+          transform: rotate(-90deg) translateX(-100vh);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: white;
+  display: none;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 435vw;
+  -webkit-transform: rotate(90deg) translateY(-100vh);
+          transform: rotate(90deg) translateY(-100vh);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_01 {
+  width: 20vw;
+  height: 100vh;
+  position: relative;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_01 span {
+  display: block;
+  width: 40vw;
+  height: 30vh;
+  background: url(../png/s1s1_img.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_02 {
+  width: 50vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  line-height: 12vw;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_02 span:nth-of-type(1) {
+  color: black;
+  font-family: 'DomaineSans';
+  display: block;
+  font-size: 14vw;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_02 span:nth-of-type(2) {
+  color: black;
+  font-family: 'DomaineSans';
+  display: block;
+  font-size: 14vw;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_02 span:nth-of-type(3) {
+  color: black;
+  font-family: 'DomaineSans';
+  display: block;
+  font-size: 14vw;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_02 span:nth-of-type(3) span {
+  font-size: 4vh;
+  font-family: 'Hijrnotes';
+  display: inline-block;
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+  color: #c39d42;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_03 {
+  width: 40vw;
+  height: 100vh;
+  position: relative;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_03 span {
+  background: url(../imgs/Fuoripista-Bike-Cover2.jpg);
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  left: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_04 {
+  width: 30vw;
+  height: 100vh;
+  padding: 5vw;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_04 span {
+  display: block;
+  width: 8vw;
+  height: 8vw;
+  background: url(../svg/1x/s1s3_txt-circle.png) no-repeat;
+  background-size: 100%;
+  margin-left: 12vw;
+  margin-top: 1vh;
+  margin-bottom: 14vh;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_04 p {
+  color: black;
+  font-size: 4vh;
+  font-family: 'DomaineSans';
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_05 {
+  width: 30vw;
+  height: 100vh;
+  padding: 12vh 1vw 10vh 4vw;
+  background: #f4f4f4;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_05 h2 {
+  color: black;
+  display: block;
+  font-family: 'DomaineSans';
+  font-size: 2.6em;
+  font-weight: 300;
+  margin-bottom: 1vh;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_05 p {
+  color: black;
+  font-family: 'Grot10';
+  margin-top: 2vh;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_05 p:nth-of-type(2) {
+  color: #606060;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_05 p:nth-of-type(3) {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 6vh;
+  border-top: 0.6px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 0.6px solid rgba(0, 0, 0, 0.2);
+  padding: 1vh 0;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_05 p:nth-of-type(3) b {
+  font-family: 'DomaineSans';
+  font-size: 2.6em;
+  font-weight: 300;
+  display: inline-block;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_06 {
+  width: 50vw;
+  height: 100vh;
+  background: #f4f4f4;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_06 span {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url(../gif/Fuoripista-Bike-Highlight-1.gif) no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_07 {
+  width: 20vw;
+  height: 100vh;
+  padding: 16vh 2vw;
+  background: #f4f4f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_07 .s1s7_top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 'Grot10';
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15vw;
+  height: auto;
+  color: black;
+  font-size: 1.8vh;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_07 .s1s7_top .s1s7t_fitting {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  background: url(../svg/1x/s1s7_fitting.png) no-repeat;
+  background-position: center;
+  background-size: 80%;
+  border-radius: 100%;
+  border: .6px solid black;
+  margin-right: 1vw;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_07 .s1s7_bot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_07 .s1s7_bot p {
+  color: black;
+  display: block;
+  width: 60px;
+  height: auto;
+  -webkit-transform: translateX(25%);
+          transform: translateX(25%);
+  font-family: 'Grot10';
+  font-size: 1em;
+  margin: 1vh 0;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_07 .s1s7_bot .s1s7b_arrow-up {
+  margin: 1vh 0;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  background: url(../svg/1x/s1s7_arrow.png) no-repeat;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-position: center;
+  background-size: 60%;
+  border-radius: 100%;
+  border: .6px solid black;
+  opacity: .3;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_07 .s1s7_bot .s1s7b_arrow-down {
+  margin: 1vh 0;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  background: url(../svg/1x/s1s7_arrow.png) no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border-radius: 100%;
+  border: .6px solid black;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_08 {
+  width: 100vw;
+  height: 100vh;
+  background: url(../imgs/0_sec1.jpg) no-repeat #000;
+  background-position-x: 100%;
+  background-position-y: 50%;
+  background-size: 85%;
+  position: relative;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_08 h2 {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  color: white;
+  font-family: 'DomaineSans';
+  font-size: 8vw;
+  line-height: 8vw;
+  font-weight: 300;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_08 h2 em {
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-style: normal;
+  font-size: 6vw;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_09 {
+  width: 30vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10vh 4vw;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_09 p:nth-of-type(1) {
+  color: black;
+  margin-top: 10vh;
+  font-size: 4vh;
+  font-family: 'DomaineSans';
+  font-weight: 300;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_09 p:nth-of-type(1) em {
+  font-style: normal;
+  color: #c39d42;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_09 p:nth-of-type(2) {
+  margin-top: 5vh;
+  font-size: 1.2vw;
+  color: #0d0d0d;
+  font-family: 'Grot10';
+  line-height: 1.8vw;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_10 {
+  width: 35vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_10 h2 {
+  color: black;
+  position: absolute;
+  top: 18%;
+  left: 4%;
+  font-size: 6vw;
+  font-weight: 300;
+  line-height: 6vw;
+  font-family: 'DomaineSans';
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_10 .s1s10_img {
+  display: block;
+  width: 26vw;
+  height: 55vh;
+  background: url(../imgs/Fuoripista-Bike-Arreda-Gli-Ambienti.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_11 {
+  width: 30vw;
+  height: 100vh;
+  padding: 0 4vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_11 p {
+  color: black;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  font-family: 'Grot10';
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_11 a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5vh;
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_11 a .s1s11_icon {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  background: url(../svg/1x/adobe.png) no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border-radius: 100%;
+  border: 0.6px solid rgba(0, 0, 0, 0.2);
+}
+
+.sec1 .sec_1_cont .sec_1_wrap .sec1_11 a .s1s11_txt {
+  margin-left: 1vw;
+  font-style: italic;
+  font-family: 'Grot10';
+  color: #c39d42;
+  font-size: 1.2em;
+}
+
+.sec1 .sec_1_cont.act {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sec2 {
+  width: 100vw;
+  height: 100vh;
+  background: url(../imgs/0_sec2.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+.sec2 .head1 {
+  font-size: 4vw;
+  font-family: 'DomaineSans';
+  line-height: 1em;
+  -webkit-animation: forheads .5s linear;
+          animation: forheads .5s linear;
+  color: white;
+  text-align: center;
+}
+
+.sec2 .head2 {
+  font-size: 2vw;
+  font-family: 'DomaineSans';
+  line-height: 1.5em;
+  -webkit-animation: forheads .5s linear;
+          animation: forheads .5s linear;
+  color: white;
+  text-align: center;
+}
+
+.sec2 .head2 em {
+  font-family: 'Hijrnotes';
+  padding: 0 1vw 0 0;
+  font-size: 3vw;
+  vertical-align: bottom;
+  color: #c39d42;
+}
+
+.sec2 .subtitle {
+  color: white;
+  text-align: center;
+  margin-top: 3vh;
+  font-family: 'Grot10';
+}
+
+.sec3 {
+  width: 100vw;
+  height: 100vh;
+  background: url(../imgs/0_sec3.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+.sec3 .head1 {
+  font-size: 4vw;
+  font-family: 'DomaineSans';
+  line-height: 1em;
+  -webkit-animation: forheads .5s linear;
+          animation: forheads .5s linear;
+  color: white;
+  text-align: center;
+}
+
+.sec3 .head2 {
+  font-size: 2vw;
+  font-family: 'DomaineSans';
+  line-height: 1.5em;
+  -webkit-animation: forheads .5s linear;
+          animation: forheads .5s linear;
+  color: white;
+  text-align: center;
+}
+
+.sec3 .head2 em {
+  font-family: 'Hijrnotes';
+  padding: 0 1vw 0 0;
+  font-size: 3vw;
+  vertical-align: bottom;
+  color: #c39d42;
+}
+
+.sec3 .subtitle {
+  color: white;
+  text-align: center;
+  margin-top: 3vh;
+  font-family: 'Grot10';
+}
+
+.sec4 {
+  background-color: #0d0d0d;
+  width: 100vw;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sec4 .logo1 {
+  width: 30vw;
+  font-family: 'DomaineSans';
+  font-size: 2vw;
+  color: white;
+  text-align: center;
+}
+
+.sec4 .logo1 a {
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: url(../png/logo-uncrate.png) no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.sec4 .logo1 b {
+  font-size: 150%;
+}
+
+.sec4 .logo2, .sec4 .logo3, .sec4 .logo4 {
+  display: none;
+}
+
+.sec_2_cont {
+  width: 100vw;
+  height: 710vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.sec_2_cont .sec_2_wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_01 {
+  background: url(../imgs/Fuoripista-Racconti-Cover.jpg) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_01 h2 {
+  font-family: 'DomaineSans';
+  font-size: 10vw;
+  font-weight: 300;
+  color: white;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_02 {
+  background-color: #0d0d0d;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_02 .s2s2_imgleft {
+  position: absolute;
+  width: 16vw;
+  height: 40vh;
+  background: url(../imgs/Fuoripista-Racconti-mood-01.jpg);
+  background-size: cover;
+  background-position: center;
+  top: 10%;
+  left: 8%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_02 .s2s2_imgright {
+  position: absolute;
+  width: 16vw;
+  height: 40vh;
+  background: url(../imgs/Fuoripista-Racconti-mood-02.jpg);
+  background-size: cover;
+  background-position: center;
+  bottom: 10%;
+  right: 8%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_02 h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: 'DomaineSans';
+  font-size: 7vw;
+  line-height: 8vw;
+  font-weight: 300;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_02 h2 b {
+  color: #c39d42;
+  font-weight: 300;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_03 {
+  background-color: #0d0d0d;
+  width: 100%;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_03 .s2s3_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 49%;
+  height: 100%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_03 .s2s3_left span:nth-of-type(1) {
+  background: url(../imgs/Fuoripista-Racconti-Audio-Adriano-01.jpg) no-repeat;
+  opacity: .6;
+  background-size: 100%;
+  width: 13vw;
+  height: 13vw;
+  border-radius: 100%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_03 .s2s3_left span:nth-of-type(2) {
+  margin-top: 2vh;
+  line-height: 2em;
+  text-align: center;
+  font-family: 'Grot10';
+  font-size: 1em;
+  color: #606060;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_03 .s2s3_left span:nth-of-type(2) b {
+  color: #d3d3d3;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_03 .s2s3_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 49%;
+  height: 100%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_03 .s2s3_right h2 {
+  text-align: center;
+  font-size: 3vw;
+  line-height: 3.6vw;
+  font-family: 'DomaineSans';
+  font-weight: 300;
+  color: white;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_03 .s2s3_right h2 em {
+  display: inline-block;
+  padding-left: 16vw;
+  margin-top: 2vh;
+  font-size: 2.6vw;
+  color: #c39d42;
+  font-family: 'Hijrnotes';
+}
+
+.sec_2_cont .sec_2_wrap .sec2_04 {
+  background-color: #0d0d0d;
+  width: 100%;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_04 .s2s4_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 49%;
+  height: 100%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_04 .s2s4_left a span:nth-of-type(1) video {
+  width: 20vw;
+  height: 40vh;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_04 .s2s4_left a span:nth-of-type(2) {
+  display: block;
+  text-align: center;
+  font-family: 'Grot10';
+  margin-top: 2vh;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_04 .s2s4_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 49%;
+  height: 100%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_04 .s2s4_right span:nth-of-type(1) {
+  background: url(../imgs/Fuoripista-Racconti-Audio-Adriano-02.jpg) no-repeat;
+  opacity: .6;
+  background-size: 100%;
+  width: 13vw;
+  height: 13vw;
+  border-radius: 100%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_04 .s2s4_right span:nth-of-type(2) {
+  margin-top: 2vh;
+  line-height: 2em;
+  text-align: center;
+  font-family: 'Grot10';
+  font-size: 1em;
+  color: #606060;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_04 .s2s4_right span:nth-of-type(2) b {
+  color: #d3d3d3;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_05 {
+  width: 100%;
+  height: 100vh;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_05 .s2s5_img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url(../imgs/Fuoripista-Bike-Set-lmage.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_06 {
+  background-color: #0d0d0d;
+  width: 100%;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_06 h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 49%;
+  height: 100%;
+  color: white;
+  font-family: 'DomaineSans';
+  font-weight: 300;
+  font-size: 2vw;
+  line-height: 3vw;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_06 h2 em {
+  display: block;
+  margin-top: 2vh;
+  font-family: 'Hijrnotes';
+  color: #c39d42;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_06 .s2s6_empty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 49%;
+  height: 100%;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_07 {
+  background-color: #0d0d0d;
+  width: 100%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'DomaineSans';
+  color: white;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_07 h2:nth-of-type(1) {
+  font-size: 6vw;
+  font-weight: 300;
+  opacity: .4;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_07 h2:nth-of-type(2) {
+  display: block;
+  margin: -5vh 0;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_07 h2:nth-of-type(2) a {
+  font-size: 9vw;
+  font-weight: 300;
+  color: white;
+}
+
+.sec_2_cont .sec_2_wrap .sec2_07 h2:nth-of-type(3) {
+  opacity: .4;
+  font-weight: 300;
+  font-size: 6vw;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop {
+  width: 100vw;
+  height: 60vh;
+  background-color: #0d0d0d;
+  border-top: 1px solid #555555;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter span {
+  width: 540px;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter h2 {
+  font-family: 'DomaineSans';
+  font-size: 2.6vw;
+  font-weight: 300;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter .email {
+  background: none;
+  border: none;
+  padding-bottom: 1vh;
+  border-bottom: 2px solid white;
+  width: 100%;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter .email::-webkit-input-placeholder {
+  font-family: 'Grot10';
+  background-color: transparent;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter .email:-ms-input-placeholder {
+  font-family: 'Grot10';
+  background-color: transparent;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter .email::-ms-input-placeholder {
+  font-family: 'Grot10';
+  background-color: transparent;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter .email::placeholder {
+  font-family: 'Grot10';
+  background-color: transparent;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter #accept {
+  margin-top: 2vh;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nletter .policy {
+  font-family: 'Grot10';
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nshare {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nshare .media {
+  font-family: 'Grot10';
+  margin-left: 5vw;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nshare .media a {
+  padding: 0 1vw;
+  color: white;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .ftop .nshare .social {
+  margin-right: 5vw;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .fbot {
+  font-size: .9em;
+  font-family: 'Grot10';
+  background-color: #0d0d0d;
+  color: #555555;
+  width: 100%;
+  height: 16vh;
+  padding: 0 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 2em;
+  border-top: 1px solid #555555;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .fbot b {
+  font-size: 2.8em;
+  font-weight: 300;
+  display: inline-block;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .fbot .policy2 {
+  text-decoration: underline;
+}
+
+.sec_2_cont .sec_2_wrap .s2_footer .fbot .policy2:hover {
+  color: white;
+}
+
+.sec_2_cont.act {
+  display: block;
+}
+
+footer .ftop {
+  width: 100vw;
+  height: 60vh;
+  background-color: #0d0d0d;
+  border-top: 1px solid #555555;
+}
+
+footer .ftop .nletter {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .ftop .nletter span {
+  width: 540px;
+}
+
+footer .ftop .nletter h2 {
+  font-family: 'DomaineSans';
+  font-size: 2.6vw;
+  font-weight: 300;
+}
+
+footer .ftop .nletter .email {
+  background: none;
+  border: none;
+  padding-bottom: 1vh;
+  border-bottom: 2px solid white;
+  width: 100%;
+}
+
+footer .ftop .nletter .email::-webkit-input-placeholder {
+  font-family: 'Grot10';
+  background-color: transparent;
+}
+
+footer .ftop .nletter .email:-ms-input-placeholder {
+  font-family: 'Grot10';
+  background-color: transparent;
+}
+
+footer .ftop .nletter .email::-ms-input-placeholder {
+  font-family: 'Grot10';
+  background-color: transparent;
+}
+
+footer .ftop .nletter .email::placeholder {
+  font-family: 'Grot10';
+  background-color: transparent;
+}
+
+footer .ftop .nletter #accept {
+  margin-top: 2vh;
+}
+
+footer .ftop .nletter .policy {
+  font-family: 'Grot10';
+}
+
+footer .ftop .nshare {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .ftop .nshare .media {
+  font-family: 'Grot10';
+  margin-left: 5vw;
+}
+
+footer .ftop .nshare .media a {
+  padding: 0 1vw;
+  color: white;
+}
+
+footer .ftop .nshare .social {
+  margin-right: 5vw;
+}
+
+footer .fbot {
+  font-size: .9em;
+  font-family: 'Grot10';
+  background-color: #0d0d0d;
+  color: #555555;
+  width: 100%;
+  height: 16vh;
+  padding: 0 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 2em;
+  border-top: 1px solid #555555;
+}
+
+footer .fbot b {
+  font-size: 2.8em;
+  font-weight: 300;
+  display: inline-block;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+}
+
+footer .fbot .policy2 {
+  text-decoration: underline;
+}
+
+footer .fbot .policy2:hover {
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,1178 @@
+@import url('common.css');
+
+@font-face{
+    font-family: 'Grot10';
+    src:url(../fonts/Grot10-Light.woff2);
+}
+// *{font-family: 'Grot10',sans-serif;}
+@font-face{
+    font-family: 'DomaineSans';
+    src: url(../fonts/DomaineSansDisplay-Light.woff2);
+}
+@font-face{
+    font-family: 'Hijrnotes';
+    src: url(../fonts/Hijrnotes.woff2);
+}
+::-webkit-scrollbar{
+    display:none;
+}
+@keyframes forheads{
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.m_header{
+    z-index: 9;
+    position: sticky;
+    
+    .logo{
+        position: fixed;
+        top:6%; left:3%;
+        width:190px;height:37px;
+        
+        z-index: 9;
+        
+        a{
+            background: url(../png/fuoripista_logo_white.png) no-repeat;
+            display:block;
+            
+            width:100%; height:100%;
+        }
+    }
+    .blogo{
+        position: fixed;
+        top:6%; left:3%;
+        width:190px;height:37px;
+        
+        z-index: 9;
+        
+        a{
+            background: url(../svg/fuoripista_logo.svg) no-repeat;
+            display:block;
+            
+            width:100%; height:100%;
+        }
+
+    }
+    .menu{
+        z-index: 9;
+        font-family: 'Grot10';
+        position: fixed;
+        top:5%; right:3%;
+        width:120px; height:46px;
+        background: rgba(0,0,0,.5);
+        display:flex;
+        justify-content: space-between;
+        padding:1vw;
+        align-items: center;
+        font-size: 1em;
+        border-radius: 27px;
+        border:1px solid #555555;
+        color:white;
+        .brgrbtn::before{
+            content: "";
+            display:block;
+            border-bottom:2px solid #555555;
+            margin-bottom: .3vw;
+        }
+        .brgrbtn::after{
+            content:'';
+            display:block;
+            border-bottom:2px solid #555555;
+            margin-bottom: .3vw;
+        }
+        .brgrbtn{
+            content:'';
+            
+            
+            width:20px;
+            display:block;
+            border-bottom:2px solid #555555;
+            
+        }
+
+    }
+
+    .mopen{
+        background: black;
+        width:100%; height:100vh;
+        display:none;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        
+        
+        .menuleft{
+            width:49%;
+            height: 100%;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right:1px solid #555555;
+            a{
+                font-family: 'DomaineSans';
+                font-size: 20vh;
+                line-height: 1em;
+                color:white;
+            }
+            a:hover{
+                color:#c39d42;
+                transition:.5s;
+            }
+        }
+        .menuright{
+            width:49%;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left:5vw;
+            
+            .mrtop{
+                font-family: 'DomaineSans';
+                display: flex;
+                flex-direction: column;
+                a{
+                    color:white;
+                    font-size: 8vh;
+                }
+                a:hover{
+                    color:#c39d42;
+                    transition:.5s;
+                }
+            }
+            .mrbottom{
+                width:60%;
+                margin-top:10vh;
+                a{
+                    display:inline-block;
+                    width:49%;
+                    font-family: 'Grot10';
+                    color:white;
+                    margin:1vh 0;
+                }
+                a:hover{
+                    color:#c39d42;
+                    transition:.5s;
+                }
+            }
+    
+        }
+        .mshare{
+            position:fixed;
+            z-index: 9;
+            left:3%; bottom:3%;
+            display:none;
+            a{
+                display:inline-block;
+                width:50px; height:50px;
+                background-color: red;
+            }
+        }
+    }
+    .mopen.act{
+        display:flex;
+        top:0; left:0;
+        
+    }
+
+    .imgnav{
+        position: fixed;
+        bottom: 3%; left: 3%;
+    }
+    .infonav{
+        z-index: 9;
+        font-family: 'Grot10';
+        position: fixed;
+        bottom:5%; right:3%;
+        color:white;
+        background: rgba(0,0,0,.5);
+        width:3vw; height:3vw;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border:1px solid rgba(255,255,255,.5);
+        font-size: 1em;
+    }
+}
+
+.intro{
+    width:100vw; height:100vh;
+    background:rgba(0,0,0,.6) url(../imgs/0_cover.jpg) no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    .head1{
+        font-size: 4vw;
+        font-family: 'DomaineSans';
+        line-height: 1em;
+        animation:forheads .5s linear;
+        
+        span{
+            overflow: hidden;
+            display: block;    
+            
+        }
+    }
+    .head2{
+        font-size: 2vw;
+        font-family: 'DomaineSans';
+        line-height: 1.5em;
+        animation:forheads .5s linear;
+        span{
+            overflow: hidden;
+        }
+        em{
+            font-family: 'Hijrnotes';
+            padding:0 1vw 0 0;
+            font-size: 3vw;
+            vertical-align: bottom;
+            color:#c39d42;
+            
+        }
+    }
+
+}
+
+.sec1{
+    width:100vw; height:100vh;
+    background: url(../imgs/0_sec1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    .head1{
+        font-size: 4vw;
+        font-family: 'DomaineSans';
+        line-height: 1em;
+        animation:forheads .5s linear;
+        color: white;
+        text-align: center;
+        
+    }
+    .head2{
+        font-size: 2vw;
+        font-family: 'DomaineSans';
+        line-height: 1.5em;
+        animation:forheads .5s linear;
+        color: white;
+        text-align: center;
+        
+        em{
+            font-family: 'Hijrnotes';
+            padding:0 1vw 0 0;
+            font-size: 3vw;
+            vertical-align: bottom;
+            color:#c39d42;
+            
+        }
+    }
+    .subtitle{
+        color:white;
+        text-align: center;
+        margin-top: 3vh;
+        font-family: 'Grot10';
+    }
+    //s1content
+
+    .sec_1_cont{
+        position:fixed;
+        top:0; left:0;
+        width: 100vh;
+        height: 100vw;
+        transform: rotate(-90deg) translateX(-100vh);
+        transform-origin: top left;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: white;
+        display:none;
+
+        .sec_1_wrap{
+            display:flex;
+            flex-direction: row;
+            width:435vw;
+            transform: rotate(90deg) translateY(-100vh);
+            transform-origin: top left;
+            .sec1_01{
+                width:20vw;
+                height:100vh;
+                position: relative;
+                span{
+                    display:block;
+                    width:40vw; height:30vh;
+                    background:url(../png/s1s1_img.png) no-repeat;
+                    
+                    background-size:cover;
+                    background-position: center;
+                    position: absolute;
+                    top:50%;right:0;
+                    transform: translateY(-50%);
+                }
+            }
+            .sec1_02{
+                width:50vw;
+                height:100vh;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                line-height: 12vw;
+                span:nth-of-type(1){
+                    color:black;
+                    font-family: 'DomaineSans';
+                    display:block;
+                    font-size: 14vw;
+                }
+                span:nth-of-type(2){
+                    color:black;
+                    font-family: 'DomaineSans';
+                    display:block;
+                    font-size: 14vw;
+                }
+                span:nth-of-type(3){
+                    color:black;
+                    font-family: 'DomaineSans';
+                    display:block;
+                    font-size: 14vw;
+                    span{
+                        font-size: 4vh;
+                        font-family: 'Hijrnotes';
+                        display: inline-block;
+                        transform: translateY(-10%);
+                        color:#c39d42;
+                    }
+                }
+            }
+            .sec1_03{
+                width:40vw;
+                height:100vh;
+                position: relative;
+                span{
+                    background:url(../imgs/Fuoripista-Bike-Cover2.jpg);
+                    position:absolute;
+                    width:100%;
+                    height:80%;
+                    left:0; bottom:0;
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+            .sec1_04{
+                width:30vw;
+                height:100vh;
+                padding:5vw;
+                span{
+                    display: block;
+                    width:8vw; height:8vw;
+                    background:url(../svg/1x/s1s3_txt-circle.png)no-repeat;
+                    background-size: 100%;
+                    margin-left:12vw;
+                    margin-top:1vh;
+                    margin-bottom:14vh;
+                }
+                p{
+                    color:black;
+                    font-size: 4vh;
+                    font-family: 'DomaineSans';
+                }
+            }
+            .sec1_05{
+                width:30vw;
+                height:100vh;
+                padding:12vh 1vw 10vh 4vw;
+                background: #f4f4f4;
+                h2{
+                    color:black;
+                    display: block;
+                    font-family: 'DomaineSans';
+                    font-size: 2.6em;
+                    font-weight: 300;
+                    margin-bottom: 1vh;
+                }
+                p{
+                    color:black;
+                    font-family: 'Grot10';
+                    margin-top: 2vh;
+                }
+                p:nth-of-type(2){
+                    color:#606060;
+                }
+                p:nth-of-type(3){
+                    color:black;
+                    display:flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top:6vh;
+                    border-top:.6px solid rgba(0,0,0,.2);
+                    border-bottom:.6px solid rgba(0,0,0,.2);
+                    padding:1vh 0;
+                    b{
+                        font-family: 'DomaineSans';
+                        font-size: 2.6em;
+                        font-weight: 300;
+                        display: inline-block;
+                    }
+                }
+            }
+            .sec1_06{
+                width:50vw;
+                height:100vh;
+                background: #f4f4f4;
+                span{
+                    width:100%; height:100%;
+                    display:block;
+                    background:url(../gif/Fuoripista-Bike-Highlight-1.gif) no-repeat;
+                    background-size: 100%;
+                    background-position:center ;
+                }
+            }
+            .sec1_07{
+                width:20vw;
+                height:100vh;
+                padding:16vh 2vw;
+                background: #f4f4f4;
+                display:flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .s1s7_top{
+                    display:flex;
+                    font-size: 'Grot10';
+                    align-items: center;
+                    width:15vw; height:auto;
+                    color:black;
+                    font-size: 1.8vh;
+                    .s1s7t_fitting{
+                        width: 60px; height:60px;
+                        display:inline-block;
+                        background:url(../svg/1x/s1s7_fitting.png) no-repeat;
+                        background-position: center;
+                        background-size: 80%;
+                        border-radius: 100%;
+                        border:.6px solid black;
+                        margin-right: 1vw;
+                    }
+                }
+                .s1s7_bot{
+                    display:flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    
+                    p{
+                        color:black;
+                        display:block;
+                        width:60px; height:auto;
+                        transform: translateX(25%);
+                        font-family: 'Grot10';
+                        font-size: 1em;
+                        margin:1vh 0;
+                    }
+                    .s1s7b_arrow-up{
+                        margin:1vh 0;
+                        width: 60px; height:60px;
+                        display:inline-block;
+                        background:url(../svg/1x/s1s7_arrow.png) no-repeat;
+                        transform: rotate(180deg);
+                        background-position: center;
+                        background-size: 60%;
+                        border-radius: 100%;
+                        border:.6px solid black;
+                        opacity:.3;
+    
+                    }
+                    .s1s7b_arrow-down{
+                        margin:1vh 0;
+                        width: 60px; height:60px;
+                        display:inline-block;
+                        background:url(../svg/1x/s1s7_arrow.png) no-repeat;
+                        background-position: center;
+                        background-size: 60%;
+                        border-radius: 100%;
+                        border:.6px solid black;
+    
+                    }
+                }
+            }
+            .sec1_08{
+                width:100vw;
+                height:100vh;
+                background:url(../imgs/0_sec1.jpg) no-repeat #000;
+                background-position-x: 100%;
+                background-position-y: 50%;
+                background-size: 85%;
+                position: relative;
+                h2{
+                    position:absolute;
+                    bottom:15%;
+                    left:10%;
+                    color:white;
+                    font-family: 'DomaineSans';
+                    font-size: 8vw;
+                    line-height: 8vw;
+                    font-weight: 300;
+                    
+                    em{
+                        position:absolute;
+                        left:-10%;
+                        top:50%;
+                        transform: translateY(-50%);
+                        font-style: normal;
+                        font-size: 6vw;
+                    }
+                }
+            }
+            .sec1_09{
+                width:30vw;
+                height:100vh;
+                display: flex;
+                flex-direction: column;
+                padding:10vh 4vw;
+                p:nth-of-type(1){
+                    color:black;
+                    margin-top:10vh;
+                    font-size: 4vh;
+                    font-family: 'DomaineSans';
+                    font-weight: 300;
+                    em{
+                        font-style: normal;
+                        color:#c39d42;
+                    }
+                }
+                p:nth-of-type(2){
+                    margin-top:5vh;
+                    font-size: 1.2vw;
+                    color: #0d0d0d;
+                    font-family: 'Grot10';
+                    line-height: 1.8vw;
+    
+                }
+            }
+            .sec1_10{
+                width:35vw;
+                height:100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                h2{
+                    color:black;
+                    position: absolute;
+                    top:18%;
+                    left:4%;
+                    font-size: 6vw;
+                    font-weight: 300;
+                    line-height: 6vw;
+                    font-family: 'DomaineSans';
+                    
+                }
+                .s1s10_img{
+                    display:block;
+                    width:26vw; height:55vh;
+                    background: url(../imgs/Fuoripista-Bike-Arreda-Gli-Ambienti.jpg);
+                    background-size: cover;
+                    background-position:center ;
+                }
+            }
+            .sec1_11{
+                width:30vw;
+                height:100vh;
+                padding:0 4vw;
+                display: flex;
+                
+                justify-content: center;
+                flex-direction: column;
+                p{
+                    color:black;
+                    font-size: 1.2em;
+                    line-height: 1.6em;
+                    font-family: 'Grot10';
+                }
+                a{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 5vh;
+                    .s1s11_icon{
+                        width: 48px; height:48px;
+                        display:inline-block;
+                        background:url(../svg/1x/adobe.png) no-repeat;
+                        background-position: center;
+                        background-size: 60%;
+                        border-radius: 100%;
+                        border:.6px solid rgba(0,0,0,.2);
+                    }
+                    .s1s11_txt{
+                        margin-left: 1vw;
+                        font-style: italic;
+                        font-family: 'Grot10';
+                        color:#c39d42;
+                        
+                        font-size: 1.2em;
+                    }
+                }
+            }
+    
+        }
+    }
+    .sec_1_cont.act{
+        display:flex;
+    }
+
+}
+
+.sec2{
+    width:100vw; height:100vh;
+    background: url(../imgs/0_sec2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    .head1{
+        font-size: 4vw;
+        font-family: 'DomaineSans';
+        line-height: 1em;
+        animation:forheads .5s linear;
+        color: white;
+        text-align: center;
+        
+    }
+    .head2{
+        font-size: 2vw;
+        font-family: 'DomaineSans';
+        line-height: 1.5em;
+        animation:forheads .5s linear;
+        color: white;
+        text-align: center;
+        
+        em{
+            font-family: 'Hijrnotes';
+            padding:0 1vw 0 0;
+            font-size: 3vw;
+            vertical-align: bottom;
+            color:#c39d42;
+            
+        }
+    }
+    .subtitle{
+        color:white;
+        text-align: center;
+        margin-top: 3vh;
+        font-family: 'Grot10';
+    }
+
+}
+
+.sec3{
+    width:100vw; height:100vh;
+    background: url(../imgs/0_sec3.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    .head1{
+        font-size: 4vw;
+        font-family: 'DomaineSans';
+        line-height: 1em;
+        animation:forheads .5s linear;
+        color: white;
+        text-align: center;
+        
+    }
+    .head2{
+        font-size: 2vw;
+        font-family: 'DomaineSans';
+        line-height: 1.5em;
+        animation:forheads .5s linear;
+        color: white;
+        text-align: center;
+        
+        em{
+            font-family: 'Hijrnotes';
+            padding:0 1vw 0 0;
+            font-size: 3vw;
+            vertical-align: bottom;
+            color:#c39d42;
+            
+        }
+    }
+    .subtitle{
+        color:white;
+        text-align: center;
+        margin-top: 3vh;
+        font-family: 'Grot10';
+    }
+
+}
+
+.sec4{
+    background-color: #0d0d0d;
+    width:100vw; height:80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .logo1{
+        width:30vw;
+        font-family: 'DomaineSans';
+        font-size: 2vw;
+        color: white;
+        text-align: center;
+        a{
+            display: block;
+            width:150px; height:150px;
+            background:url(../png/logo-uncrate.png) no-repeat;
+            background-size: cover;
+            margin:0 auto;
+            }
+        b{
+            font-size: 150%;
+        }
+    }
+    .logo2,.logo3,.logo4{
+        display:none;
+    }
+}
+
+.sec_2_cont{
+    width:100vw; height:710vh;
+    position: absolute;
+    top:0; left:0;
+    display:none;
+    .sec_2_wrap{
+        width:100%; height:100%;
+        .sec2_01{
+            background: url(../imgs/Fuoripista-Racconti-Cover.jpg) no-repeat;
+            background-size: cover;
+            width:100%; height:100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            h2{
+                font-family: 'DomaineSans';
+                font-size: 10vw;
+                font-weight: 300;
+                color:white;
+            }
+        }//end
+        .sec2_02{
+            background-color: #0d0d0d;
+            width:100%; height:100vh;
+            position: relative;
+            .s2s2_imgleft{
+                position:absolute;
+                width:16vw; height:40vh;
+                background:url(../imgs/Fuoripista-Racconti-mood-01.jpg);
+                background-size: cover;
+                background-position: center;
+                top:10%; left:8%;
+            }
+            .s2s2_imgright{
+                position:absolute;
+                width:16vw; height:40vh;
+                background:url(../imgs/Fuoripista-Racconti-mood-02.jpg);
+                background-size: cover;
+                background-position: center;
+                bottom:10%; right:8%;
+            }
+            h2{
+                position:absolute;
+                top:50%; left:50%;
+                transform: translate(-50%,-50%);
+                font-family: 'DomaineSans';
+                font-size: 7vw;
+                line-height: 8vw;
+                font-weight: 300;
+                color:white;
+                width:100%;
+                text-align: center;
+                b{
+                    color: #c39d42;
+                    font-weight: 300;
+                }
+                
+            }
+        }//end
+        .sec2_03{
+            background-color: #0d0d0d;
+            width:100%; height:90vh;
+            display:flex;
+            .s2s3_left{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width:49%; height:100%;
+                span:nth-of-type(1){
+                    background:url(../imgs/Fuoripista-Racconti-Audio-Adriano-01.jpg) no-repeat;
+                    opacity: .6;
+                    background-size:100%;
+                    width:13vw; height:13vw;
+                    border-radius: 100%;
+                }
+                span:nth-of-type(2){
+                    margin-top:2vh;
+                    line-height: 2em;
+                    text-align: center;
+                    font-family: 'Grot10';
+                    font-size: 1em;
+                    color:#606060;
+                    
+                    b{
+                        color: #d3d3d3;
+                        
+                    }
+                }
+            }
+            .s2s3_right{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width:49%; height:100%;
+                h2{
+                    text-align: center;
+                    font-size: 3vw;
+                    line-height: 3.6vw;
+                    font-family: 'DomaineSans';
+                    font-weight: 300;
+                    color:white;
+                    em{
+                        display: inline-block;
+                        padding-left: 16vw;
+                        margin-top:2vh;
+                        font-size: 2.6vw;
+                        color:#c39d42;
+                        font-family: 'Hijrnotes';
+                    }
+                }
+            }
+        }//end
+        .sec2_04{
+            background-color: #0d0d0d;
+            width:100%; height:90vh;
+            display:flex;
+            .s2s4_left{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width:49%; height:100%;
+                a{
+                    span:nth-of-type(1){
+                        video{
+                            width:20vw; height:40vh;
+                        }                  
+                    }
+                    span:nth-of-type(2){
+                        display:block;
+                        text-align: center;
+                        font-family: 'Grot10';
+                        margin-top:2vh;
+                    }
+                }
+            }
+            .s2s4_right{                
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width:49%; height:100%;
+                span:nth-of-type(1){
+                    background:url(../imgs/Fuoripista-Racconti-Audio-Adriano-02.jpg) no-repeat;
+                    opacity: .6;
+                    background-size:100%;
+                    width:13vw; height:13vw;
+                    border-radius: 100%;
+                }
+                span:nth-of-type(2){
+                    margin-top:2vh;
+                    line-height: 2em;
+                    text-align: center;
+                    font-family: 'Grot10';
+                    font-size: 1em;
+                    color:#606060;
+                    
+                    b{
+                        color: #d3d3d3;
+                        
+                    }
+                }
+            }
+        }//end
+        .sec2_05{
+            width:100%; height:100vh;
+            .s2s5_img{
+                width:100%; height:100%;
+                display:block;
+                background:url(../imgs/Fuoripista-Bike-Set-lmage.jpg) no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            
+        }//end
+        .sec2_06{
+            background-color: #0d0d0d;
+            width:100%; height:90vh;
+            display:flex;
+            h2{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width:49%; height:100%;
+                color:white;
+                font-family: 'DomaineSans';
+                font-weight: 300;
+                font-size:2vw;
+                line-height:3vw;
+                em{
+                    display:block;
+                    margin-top:2vh;
+                    font-family: 'Hijrnotes';
+                    color: #c39d42;
+                }
+
+            }
+            .s2s6_empty{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width:49%; height:100%;
+
+            }
+
+        }//end
+        .sec2_07{
+            background-color: #0d0d0d;
+            width:100%; height:80vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'DomaineSans';
+            color:white;
+            
+            h2:nth-of-type(1){
+                font-size: 6vw;
+                font-weight: 300;    
+                opacity: .4;
+            }
+            h2:nth-of-type(2){
+                a{
+                    font-size: 9vw;
+                    font-weight: 300;
+                    color:white;
+                }
+                display:block;
+                margin:-5vh 0;                
+            }
+            h2:nth-of-type(3){
+                opacity: .4;
+                font-weight: 300;
+                font-size: 6vw;
+            }
+        }//end
+
+        .s2_footer{
+            .ftop{
+                width:100vw; height:60vh;
+                background-color: #0d0d0d;
+                border-top: 1px solid #555555;
+                .nletter{
+                    
+                    height:80%;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    color:white;
+                    flex-direction: column;
+                    span{
+                        width:540px;
+                    }
+                    h2{
+                        font-family: 'DomaineSans';
+                        font-size: 2.6vw;
+                        font-weight: 300;
+                    }
+                    .email{
+                        background:none;
+                        border:none;
+                        padding-bottom: 1vh;
+                        border-bottom: 2px solid white;
+                        width:100%;
+                    }
+                    .email::placeholder{
+                        font-family: 'Grot10';
+                        background-color: transparent;
+                    }
+                    #accept{
+                        
+                        margin-top: 2vh; 
+                    }
+                    .policy{
+                        font-family: 'Grot10';
+                    }
+            
+                }
+                .nshare{
+                    height:20%;
+                    display:flex;
+                    justify-content: space-between;
+                    align-items: center;
+                        .media{
+                            font-family: 'Grot10';
+                            margin-left: 5vw;
+                            a{
+                                padding:0 1vw;
+                                color:white;
+                            }
+                        }
+                        .social{
+                            margin-right:5vw;
+                        }
+                }
+            }
+            
+            .fbot{
+                font-size: .9em;
+                font-family: 'Grot10';
+                background-color: #0d0d0d;
+                color:#555555;
+                width:100%; height:16vh;
+                padding:0 5vw;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                line-height: 2em;
+                border-top:1px solid #555555;
+            
+            
+                b{
+                    font-size: 2.8em;
+                    font-weight: 300;
+                    display: inline-block;
+                    transform: translateY(30%);
+                }
+                .policy2{
+                    text-decoration: underline;
+                }
+                .policy2:hover{
+                    color:white;
+                }
+            }
+        }
+        
+    }
+}
+.sec_2_cont.act{
+    display:block;
+}
+
+footer{
+    .ftop{
+        width:100vw; height:60vh;
+        background-color: #0d0d0d;
+        border-top: 1px solid #555555;
+        .nletter{
+            
+            height:80%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
+            flex-direction: column;
+            span{
+                width:540px;
+            }
+            h2{
+                font-family: 'DomaineSans';
+                font-size: 2.6vw;
+                font-weight: 300;
+            }
+            .email{
+                background:none;
+                border:none;
+                padding-bottom: 1vh;
+                border-bottom: 2px solid white;
+                width:100%;
+            }
+            .email::placeholder{
+                font-family: 'Grot10';
+                background-color: transparent;
+            }
+            #accept{
+                
+                margin-top: 2vh; 
+            }
+            .policy{
+                font-family: 'Grot10';
+            }
+    
+        }
+        .nshare{
+            height:20%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+                .media{
+                    font-family: 'Grot10';
+                    margin-left: 5vw;
+                    a{
+                        padding:0 1vw;
+                        color:white;
+                    }
+                }
+                .social{
+                    margin-right:5vw;
+                }
+        }
+    }
+    
+    .fbot{
+        font-size: .9em;
+        font-family: 'Grot10';
+        background-color: #0d0d0d;
+        color:#555555;
+        width:100%; height:16vh;
+        padding:0 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 2em;
+        border-top:1px solid #555555;
+    
+    
+        b{
+            font-size: 2.8em;
+            font-weight: 300;
+            display: inline-block;
+            transform: translateY(30%);
+        }
+        .policy2{
+            text-decoration: underline;
+        }
+        .policy2:hover{
+            color:white;
+        }
+    }
+}
